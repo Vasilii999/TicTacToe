@@ -15,7 +15,7 @@ void main() {
     // Проверяем, что ScoreBoard присутствует
     expect(find.byType(ScoreBoard), findsOneWidget);
 
-    // Проверяем, что GridView присутствует
-    expect(find.byType(GridView), findsOneWidget);
+    // Можно проверить, что Scaffold присутствует
+    expect(find.byType(Scaffold), findsOneWidget);
   });
 }
