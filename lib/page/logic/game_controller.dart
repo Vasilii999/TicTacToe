@@ -1,4 +1,4 @@
-import '../../constant/symbolXO.dart';
+import '../../constant/symbol_xo.dart';
 import '../models/move.dart';
 
 class GameController {

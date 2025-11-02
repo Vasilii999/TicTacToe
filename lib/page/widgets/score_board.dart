@@ -1,5 +1,5 @@
 import 'package:endless_tic_tac_toe/constant/board_constants.dart';
-import 'package:endless_tic_tac_toe/constant/symbolXO.dart';
+import 'package:endless_tic_tac_toe/constant/symbol_xo.dart';
 import 'package:flutter/material.dart';
 
 class ScoreBoard extends StatelessWidget {

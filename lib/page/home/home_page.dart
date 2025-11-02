@@ -1,7 +1,7 @@
 import 'package:endless_tic_tac_toe/constant/board_constants.dart';
 import 'package:flutter/material.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
-import '../../constant/symbolXO.dart';
+import '../../constant/symbol_xo.dart';
 import '../logic/game_controller.dart';
 import '../widgets/score_board.dart';
 import '../widgets/game_board/game_board.dart';

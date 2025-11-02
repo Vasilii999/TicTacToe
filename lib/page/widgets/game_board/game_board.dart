@@ -1,5 +1,5 @@
 import 'dart:math';
-import 'package:endless_tic_tac_toe/constant/symbolXO.dart';
+import 'package:endless_tic_tac_toe/constant/symbol_xo.dart';
 import 'package:flutter/material.dart';
 import 'board_painter.dart';
 

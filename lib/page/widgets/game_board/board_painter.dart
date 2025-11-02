@@ -1,5 +1,5 @@
 import 'package:endless_tic_tac_toe/constant/board_constants.dart';
-import 'package:endless_tic_tac_toe/constant/symbolXO.dart';
+import 'package:endless_tic_tac_toe/constant/symbol_xo.dart';
 import 'package:flutter/material.dart';
 
 class BoardPainter extends CustomPainter {
@@ -35,7 +35,7 @@ class BoardPainter extends CustomPainter {
 
     for (int i = 0; i < 9; i++) {
       final s = board[i];
-      if (s == Symbol.empty) continue;
+      if (s == SymbolXO.empty) continue;
 
       final col = i % 3;
       final row = i ~/ 3;
