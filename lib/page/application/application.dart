@@ -12,6 +12,7 @@ class _MyAppState extends State<Application> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      title: 'Endless Tic Tac Toe',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),

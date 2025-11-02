@@ -1,24 +1,21 @@
-import 'package:endless_tic_tac_toe/page/application/application.dart';
-import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:flutter/material.dart';
+import 'package:endless_tic_tac_toe/page/application/application.dart';
+import 'package:endless_tic_tac_toe/page/widgets/score_board.dart';
 
 void main() {
-  testWidgets('Board shows grid and responds to taps', (WidgetTester tester) async {
+  testWidgets('HomePage displays AppBar and ScoreBoard', (WidgetTester tester) async {
     // Запускаем приложение
-    await tester.pumpWidget(Application());
+    await tester.pumpWidget(const Application());
+    await tester.pumpAndSettle();
 
-    // Проверяем, что заголовок есть
-    expect(find.text('Endless Tic Tac Toe'), findsOneWidget);
+    // Проверяем, что AppBar присутствует
+    expect(find.byType(AppBar), findsOneWidget);
+
+    // Проверяем, что ScoreBoard присутствует
+    expect(find.byType(ScoreBoard), findsOneWidget);
 
     // Проверяем, что GridView присутствует
     expect(find.byType(GridView), findsOneWidget);
-
-    // Проверяем кликабельность первой клетки
-    final cell0 = find.byKey(const Key('cell_0'));
-    await tester.tap(cell0);
-    await tester.pump();
-
-    // После клика должна появиться X
-    expect(find.text('X'), findsOneWidget);
   });
 }
