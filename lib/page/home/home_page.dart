@@ -6,7 +6,6 @@ import '../logic/game_controller.dart';
 import '../widgets/score_board.dart';
 import '../widgets/game_board/game_board.dart';
 
-
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
 
