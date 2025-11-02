@@ -1,5 +1,6 @@
-name: Flutter CI
+name: Flutter CI/CD
 
+# Workflow запускается при пуше и pull request в ветку master
 on:
   push:
     branches:
@@ -13,19 +14,35 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      # 1️⃣ Скачиваем репозиторий
       - name: Checkout code
         uses: actions/checkout@v4
 
+      # 2️⃣ Устанавливаем Flutter (stable)
       - name: Set up Flutter
         uses: subosito/flutter-action@v2
         with:
-          flutter-version: '3.35.3'
+          flutter-version: stable
 
+      # 3️⃣ Подтягиваем зависимости
       - name: Install dependencies
         run: flutter pub get
 
+      # 4️⃣ Анализируем код
       - name: Analyze code
         run: flutter analyze
 
+      # 5️⃣ Прогоняем тесты
       - name: Run tests
         run: flutter test
+
+      # 6️⃣ Собираем debug APK (без keystore)
+      - name: Build debug APK
+        run: flutter build apk --debug
+
+      # 7️⃣ Загружаем APK как артефакт для скачивания
+      - name: Upload debug APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: debug-apk
+          path: build/app/outputs/flutter-apk/app-debug.apk
